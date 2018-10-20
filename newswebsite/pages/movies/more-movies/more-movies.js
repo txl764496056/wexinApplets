@@ -76,6 +76,8 @@ Page({
       });
     // 隐藏顶部导航栏里的加载动画
     wx.hideNavigationBarLoading();
+    // 影藏下拉刷新动画
+    wx.stopPullDownRefresh();
   },
 
   // 上滑加载更多
@@ -91,6 +93,13 @@ Page({
     util.http(nextUrl, this.processDoubanData);
     // 设置加载动画，在顶部导航条显示，提示用户正在加载
     wx.showNavigationBarLoading();
+  },
+  // 下拉刷新
+  onPullDownRefresh:function(evt){
+    var refreshUrl = this.requestUrl+"?start=0&count=20";
+    // 下拉刷新，从头加载，要设置为true，否则数据还是加载后的那么多
+    this.data.isEmpty = true;
+    util.http(refreshUrl,this.processDoubanData);
   },
 
 
