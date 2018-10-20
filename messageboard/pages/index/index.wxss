@@ -1,0 +1,9 @@
+/**index.wxss**/
+input,text{font-size:24rpx;}
+input{border:1rpx solid #ddd;padding:5rpx 10rpx;font-size:24rpx;}
+.msg-box{margin:10rpx 40rpx 0;}
+.send-box{display: flex;align-items:center;}
+.place-color1{color:#ff6600;}
+
+/* 留言列表 */
+.list-item{border-bottom:1rpx dashed #ddd;line-height:100rpx;display:flex;align-items:center;justify-content: space-between;}

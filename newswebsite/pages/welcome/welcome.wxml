@@ -1,0 +1,5 @@
+<!--pages/welcome/welcome.wxml-->
+<view class="welcome-container">
+  <button bindtap="toNews" type="primary">进入新闻列表页</button>
+  <image class="welcome-img" src="{{welcomeImg}}"></image>
+</view>

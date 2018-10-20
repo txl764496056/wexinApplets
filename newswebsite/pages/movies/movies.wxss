@@ -1,0 +1,5 @@
+/* pages/moves/moves.wxss */
+@import "../template/movie-list/movie-list-template.wxss";
+
+.container{background-color: #eee;}
+.movies-template{margin-bottom:20rpx;}

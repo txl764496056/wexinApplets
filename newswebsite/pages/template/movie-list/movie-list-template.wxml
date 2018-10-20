@@ -1,0 +1,18 @@
+<import src="../movie/movie-template.wxml" />
+
+<template name="movieListTemplate">
+  <view class="movie-list-container">
+    <view class="movie-head">
+      <text class="slogan">正在热议</text>
+      <view class="more">
+        <text>更多</text>
+        <image src='/images/arrow1R.png'></image>
+      </view>
+    </view>
+    <view class="movies-container">
+      <template is="movieTemplate" />
+      <template is="movieTemplate" />
+      <template is="movieTemplate" />
+    </view>
+  </view>
+</template>
