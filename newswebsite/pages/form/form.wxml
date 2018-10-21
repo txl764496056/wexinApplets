@@ -1,0 +1,32 @@
+<!--pages/form/form.wxml-->
+<form bindsubmit='formSubmit'>
+
+  <view>第一组复选框</view>
+  <checkbox-group name="checkbox">
+    <checkbox value="极限挑战">极限挑战</checkbox>
+    <checkbox value="王牌对王牌">王牌对王牌</checkbox>
+  </checkbox-group>
+
+  <view>第一组单选按钮</view>
+  <radio-group name="radio">
+    <radio value="公交">公交</radio>
+    <radio value="走路">走路</radio>
+    <radio value='驾车'>驾车</radio>
+  </radio-group>
+
+  <view>第二组单选按钮</view>
+  <radio-group name="radio">
+    <radio value="可乐">可乐</radio>
+    <radio value-="雪碧">雪碧</radio>
+    <radio value="啤酒">啤酒</radio>
+  </radio-group>
+
+  <view>开关</view>
+  <switch name="switch" checked></switch>
+
+  <view>滑块</view>
+  <slider name="slider" value="30" max="300" show-value></slider>
+
+  <button form-type="submit">提交表单</button>
+
+</form>

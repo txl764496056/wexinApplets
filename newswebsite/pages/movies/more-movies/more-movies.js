@@ -87,6 +87,7 @@ Page({
     // // 设置加载动画，在顶部导航条显示，提示用户正在加载
     // wx.showNavigationBarLoading();
   },
+
   // 上滑加载更多
   onReachBottom:function(){
     var nextUrl = this.requestUrl + "?start=" + this.data.totalCount + "&count=20";
@@ -94,12 +95,21 @@ Page({
     // 设置加载动画，在顶部导航条显示，提示用户正在加载
     wx.showNavigationBarLoading();
   },
+
   // 下拉刷新
   onPullDownRefresh:function(evt){
     var refreshUrl = this.requestUrl+"?start=0&count=20";
     // 下拉刷新，从头加载，要设置为true，否则数据还是加载后的那么多
     this.data.isEmpty = true;
     util.http(refreshUrl,this.processDoubanData);
+  },
+
+  // 跳转至电影详情页
+  toMovieDetails: function (evt) {
+    var movieId = evt.currentTarget.dataset.movieId;
+    wx.navigateTo({
+      url: '../movie-details/movie-details?movieId=' + movieId,
+    })
   },
 
 

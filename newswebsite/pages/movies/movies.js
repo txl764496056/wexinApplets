@@ -9,7 +9,10 @@ Page({
   data: {
     top250: {},
     inTheaters: {},
-    comingSoon: {}
+    comingSoon: {},
+    moviePageShow:true,
+    searchPannelShow:false,
+    searchValue:""
   },
   /**
    * 生命周期函数--监听页面加载
@@ -84,7 +87,39 @@ Page({
     })
   },
 
+  // 搜索聚焦事件
+  searchFocus:function(evt){
+    this.setData({
+      moviePageShow:false,
+      searchPannelShow:true
+    });
+  },
 
+  //完成搜索
+  searchChange:function(evt){
+    var val = evt.detail.value;
+    var searchUrl = app.globalData.doubanUrl+"/v2/movie/search?q="+val;
+    this.getMoveListData(searchUrl,"search");
+  },
+
+  // 退出搜索
+  searchCancel:function(){
+    this.setData({
+      moviePageShow: true,
+      searchPannelShow: false
+    });
+    this.setData({
+      searchValue:""
+    });
+  },
+
+  // 跳转至电影详情页
+  toMovieDetails:function(evt){
+    var movieId = evt.currentTarget.dataset.movieId;
+    wx.navigateTo({
+      url: 'movie-details/movie-details?movieId=' + movieId,
+    })
+  },
 
 
 

@@ -54,8 +54,30 @@ function http(url,callBack) {
   });
 }
 
+// 演员名字拼接
+function convertToCastString(casts){
+  var castsJoin = "";
+  for(var index in casts){
+    castsJoin = castsJoin+ casts[index].name+"/";
+  }
+  return castsJoin.substring(0,castsJoin.length-2);
+}
+
+function convertTocastInfos(casts){
+  var castsArray = [];
+  for(var index in casts){
+    var cast ={
+      name:casts[index].name,
+      img:casts[index].avatars ? casts[index].avatars.large:"",
+    }
+    castsArray.push(cast);
+  }
+  return castsArray;
+}
 
 module.exports = {
   convertToStarsArray: convertToStarsArray,
-  http:http
+  http:http,
+  convertToCastString:convertToCastString,
+  convertTocastInfos:convertTocastInfos
 }
