@@ -1,6 +1,5 @@
 {
   "pages": [
-    "pages/map/map",
     "pages/posts/post",
     "pages/welcome/welcome",
     "pages/logs/logs",
@@ -9,7 +8,8 @@
     "pages/movies/movies",
     "pages/movies/more-movies/more-movies",
     "pages/movies/movie-details/movie-details",
-    "pages/form/form"
+    "pages/form/form",
+    "pages/map/map"
   ],
   "window": {
     "backgroundTextStyle": "light",
