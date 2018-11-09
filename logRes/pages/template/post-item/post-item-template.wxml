@@ -1,0 +1,17 @@
+<template name="postItem">
+    <view class="post-container">
+      <view class="post-author">
+        <image src='{{author_img}}'></image>
+        <text>{{date}}</text>
+      </view>
+      <text class="post-title">{{title}}</text>
+      <image class="post-image" src="{{post_img}}"></image>
+      <text class="post-content">{{post_content}}</text>
+      <view class="post-like">
+        <icon class='iconfont icon-boshiweb_liuyan'></icon>
+        <text>{{view_num}}</text>
+        <icon class='iconfont icon-shoucang'></icon>
+        <text>{{collect_num}}</text>
+      </view>
+    </view>
+</template>

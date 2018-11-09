@@ -1,0 +1,19 @@
+<!--pages/posts/post.wxml-->
+<!-- 引入新闻列表模板 -->
+<import src="../template/post-item/post-item-template.wxml"/>
+<view>
+<!-- 轮播 start -->         
+  <swiper class="sw-banner" autoplay="{{autoplay}}" indicator-dots="{{indicatorDots}}" indicator-active-color="{{indicatorActiveColor}}">
+    <swiper-item wx:for="{{bannerUrl}}" wx:key="{{index}}">
+      <image src="{{item}}"></image>
+    </swiper-item>
+  </swiper>
+  <!-- 轮播 end -->
+  <navigator url="../share/share">share</navigator>
+  <!-- 新闻列表 start -->
+    <view catchtap="toDetail" wx:for="{{post_list}}" wx:key="{{index}}" data-post-id="{{index}}">
+    <!-- data-post-id在dataset中会是postId,将-去掉 -->
+      <template is="postItem" data="{{...item}}"/>
+    </view>
+  <!-- 新闻列表 end --> 
+</view>

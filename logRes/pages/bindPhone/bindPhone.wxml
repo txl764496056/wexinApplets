@@ -1,0 +1,6 @@
+<!--pages/bindPhone/bindPhone.wxml-->
+<view class="container">
+  <view>绑定手机号</view>
+  <input placeholder='输入手机号'></input><label>验证码</label>
+  <input placeholder='输入验证码'></input>
+</view>

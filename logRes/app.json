@@ -1,0 +1,38 @@
+{
+  "pages": [
+    "pages/bindPhone/bindPhone",
+    "pages/welcome/welcome",
+    "pages/posts/post",
+    "pages/login/login",
+    "pages/index/index",
+    "pages/posts/post-detail/post-detail",
+    "pages/movies/movies",
+    "pages/movies/more-movies/more-movies",
+    "pages/movies/movie-details/movie-details"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#37C28B",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "#fff"
+  },
+  "tabBar": {
+    "color": "#666",
+    "selectedColor": "#37C28B",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/posts/post",
+        "text": "新闻",
+        "iconPath": "/images/new.png",
+        "selectedIconPath": "/images/new_sel.png"
+      },
+      {
+        "pagePath": "pages/movies/movies",
+        "text": "电影",
+        "iconPath": "/images/movie.png",
+        "selectedIconPath": "/images/movie_sel.png"
+      }
+    ]
+  }
+}

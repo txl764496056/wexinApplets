@@ -1,0 +1,5 @@
+<!--logs.wxml-->
+<view class="welcome-container">
+  <button bindgetuserinfo="bindGetUserInfo" lang="zh_cn" type="primary" open-type="getUserInfo">登录/注册</button>
+  <image class="welcome-img" src="{{welcomeImg}}"></image>
+</view>

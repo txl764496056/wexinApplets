@@ -1,0 +1,23 @@
+<import src="../movie/movie-template.wxml" />
+
+<!-- <template name="movieGridTemplate">
+    <scroll-view bindscrolltolower="scrollLower" scroll-y="{{true}}" scroll-x="{{false}}" class="grid-scroll-container">
+      <view class="movie-grid-container">
+        <block wx:for="{{movies}}" wx:key="{{index}}">
+          <template is="movieTemplate" data="{{...item}}" />
+        </block>
+      </view>
+    </scroll-view>
+</template> -->
+
+<!-- 上述view-scroll方法与下拉刷新不能共存 -->
+<!-- 利用view与onReachBottom方法实现上滑加载更多 -->
+<template name="movieGridTemplate">
+  <view class="grid-scroll-container">
+    <block wx:for="{{movies}}" wx:key="{{index}}">
+      <view class="signal-grid-container">
+        <template is="movieTemplate" data="{{...item}}" />
+      </view>
+    </block>
+  </view>
+</template>
