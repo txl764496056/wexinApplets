@@ -1,5 +1,0 @@
-/* pages/posts/post.wxss */
-@import "../template/post-item/post-item-template.wxss"
-.sw-banner{width:100%;height:250rpx;}
-.sw-banner swiper-item image{width:100%;height:100%;}
-

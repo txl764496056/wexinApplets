@@ -1,9 +1,0 @@
-项目页面 
-  movies  posts template 三个文件夹下
-
-引导页
-welcome 文件夹下
-
-表单组件案例
-form 文件夹下
-

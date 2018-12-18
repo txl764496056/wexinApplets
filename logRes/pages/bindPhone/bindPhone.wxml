@@ -1,6 +1,11 @@
 <!--pages/bindPhone/bindPhone.wxml-->
 <view class="container">
-  <view>绑定手机号</view>
-  <input placeholder='输入手机号'></input><label>验证码</label>
+  <view class="phone-title">绑定手机号</view>
+  <view class="input-unit">
+    手机号：
+    <input placeholder='输入手机号'></input>
+  </view>
   <input placeholder='输入验证码'></input>
+  <button bindtap="addTell">添加联系人</button>
+  <image src="http://img.zcool.cn/community/01528a58e4c8e6a801219c77b0154e.png@1280w_1l_2o_100sh.png"></image>
 </view>

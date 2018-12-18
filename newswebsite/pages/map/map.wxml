@@ -1,9 +1,0 @@
-<!--pages/map/map.wxml-->
-<map id="my-map" 
-subkey="6GRBZ-TVYW2-WQQU3-CAKFM-AXZVE-Q2FZ7"
-markers="{{markers}}"
-scale="14"
-longitude='113.872166'
-latitude='22.581929'
-show-location='true'
-></map>

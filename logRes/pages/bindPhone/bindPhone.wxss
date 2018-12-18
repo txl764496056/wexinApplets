@@ -1,1 +1,2 @@
 /* pages/bindPhone/bindPhone.wxss */
+.phone-title{color:#37C28B;text-align: center;margin:120rpx 0;font-size:60rpx;letter-spacing: 1px;}

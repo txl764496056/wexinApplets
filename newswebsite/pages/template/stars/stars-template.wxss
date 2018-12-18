@@ -1,4 +1,0 @@
-.stars-container{display:flex;flex-direction: row;}
-.stars{display: flex;flex-direction: row;height: 17rpx;margin-right: 18rpx;}
-.stars image{width:30rpx;height:30rpx;margin-left: 3rpx;}
-.star-score{color:#ff6000;font-size: 24rpx;}

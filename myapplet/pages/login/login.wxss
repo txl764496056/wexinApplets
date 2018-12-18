@@ -1,4 +1,0 @@
-/* pages/login/login.wxss */
-.login-container{margin:0 20rpx;}
-.login-container text{font-size: 26rpx;}
-.login-container button{margin-top: 20rpx;}
