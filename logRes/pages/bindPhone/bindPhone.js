@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    src:""
   },
 
   /**
@@ -14,58 +14,43 @@ Page({
   onLoad: function (options) {
     
   },
-  addTell:function(){
-    let _this = this;
-    let imgpath = "";
-    wx.getImageInfo({
-      src: 'http://img.zcool.cn/community/01528a58e4c8e6a801219c77b0154e.png@1280w_1l_2o_100sh.png',
-      success: function (ret) {
-        var path = ret.path;
-        wx.saveImageToPhotosAlbum({
-          filePath: path,
-          fail:function(res){
-            console.log("fail",res,path);
-          },
-          success(res) {
-            console.log("success", res, path);
-          },
-          complete:function(res){
-            console.log("complete", res, path);
-          }
+  /**
+   * camera拍照功能 
+   */
+  carmeraTakePhoto:function(){
+    let ctx = wx.createCameraContext();
+    ctx.takePhoto({
+      quality:'high',
+      success:(res)=>{
+        this.setData({
+          src:res.tempImagePath
         })
-      }
-    });
-    
-    wx.addPhoneContact({
-      firstName: "梁",
-      lastName: "谭",
-      middleName: "秀",
-      remark: "添加个人备注",
-      organization: "公司汇智",
-      title: "职位经理",
-      workPhoneNumber: "工作work1827169524545",
-      hostNumber: "公司host854256",
-      homePhoneNumber: "住宅home45488213644",
-      nickName: "昵称txl",
-      // photoFilePath: imgpath
-      success:function(res){
-        console.log(res,"addres");
+      },
+      fail:function(err){
+        console.log(err, "fail");
+      },
+      compolete:function(res){
+        console.log(res, "compolete");
       }
     })
-    
-    // wx.addPhoneContact({
-    //   firstName: "梁",
-    //   lastName: "谭",
-    //   middleName: "秀",
-    //   remark: "添加个人备注",
-    //   organization: "公司汇智",
-    //   title: "职位经理",
-    //   workPhoneNumber: "工作work1827169524545",
-    //   hostNumber: "公司host854256",
-    //   homePhoneNumber: "住宅home45488213644",
-    //   nickName: "昵称txl",
-    //   photoFilePath: "../../images/photo/5.jpg"
-    // })
+  },
+  /**
+   * chooseImage 拍照
+   */
+  TakePhoto:function(){
+    let _this = this;
+    wx.chooseImage({
+      count:1,
+      success:function(res){
+        console.log(res,"success");
+      },
+      fail:function(err){
+        console.log(err,"fail");
+      },
+      compolete:function(res){
+        console.log(res,"compolete");
+      }
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

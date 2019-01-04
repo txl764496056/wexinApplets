@@ -1,4 +1,7 @@
 <!--pages/bindPhone/bindPhone.wxml-->
+<camera style="width:100%;height:50vh;" device-position="front"></camera>
+<button bindtap="carmeraTakePhoto">拍照</button>
+<image src="{{src}}"></image>
 <view class="container">
   <view class="phone-title">绑定手机号</view>
   <view class="input-unit">
@@ -6,6 +9,6 @@
     <input placeholder='输入手机号'></input>
   </view>
   <input placeholder='输入验证码'></input>
-  <button bindtap="addTell">添加联系人</button>
+  <button bindtap="TakePhoto">take a photo</button>
   <image src="http://img.zcool.cn/community/01528a58e4c8e6a801219c77b0154e.png@1280w_1l_2o_100sh.png"></image>
 </view>
