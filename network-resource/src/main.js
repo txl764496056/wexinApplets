@@ -5,9 +5,8 @@ import App from './App'
 Vue.config.productionTip = false
 App.mpType = 'app'
 
-const app = new Vue(App)
-app.$mount()
-Vue.prototype.globalData = getApp().globalData
+Vue.prototype.globalData = {}
+// Vue.prototype.globalData = getApp().globalData
 
 // API接口地址前半段
 Vue.prototype.globalData.httpUrl = "https://api.qhhznt.com/index.php/";
@@ -23,3 +22,5 @@ Vue.prototype.globalData.openidUrl = "miniprogram/login/get_openid";
 Vue.prototype.globalData.userInfo = {};
 Vue.prototype.globalData.openid = "";
 
+const app = new Vue(App)
+app.$mount()

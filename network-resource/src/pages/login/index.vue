@@ -39,7 +39,7 @@ export default {
     },
     mounted:function(){
         let _this = this;
-        console.log(_this.globalData.openid,"login");
+        // console.log(_this.globalData.openid,"login");
     },
     methods:{
         /**

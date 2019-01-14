@@ -31,8 +31,8 @@ export default {
     let _this = this;
     // 获取openid
     let url = _this.httpUrl+_this.openidUrl;
-    utils.getOpenid(url);
-    console.log(url,"created");
+    // utils.getOpenid(url);
+    // console.log(url,"created");
     // 1、位登录则跳转至登录页
     // let openid = wx.getStorageSync("openid");
 
