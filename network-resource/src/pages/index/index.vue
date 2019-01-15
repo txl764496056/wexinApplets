@@ -7,6 +7,7 @@
 </template>
 
 <script>
+import store from '@/utils/store'
 import card from '@/components/card'
 import utils from "@/utils/index"
 export default {
@@ -19,7 +20,7 @@ export default {
       openidUrl:this.globalData.openidUrl//获取openid
     }
   },
-
+  store,
   components: {
     card
   },
@@ -53,6 +54,16 @@ export default {
     // }
     
     
+  },
+  computed:{
+        openid:function(){
+            return this.$store.state.openid
+        }
+    },
+  watch:{
+      'openid':function(newVal,oldVal){
+          console.log("ddd",newVal);
+      }
   },
   mounted:function(){
     // console.log(this.globalData.openid,"index");

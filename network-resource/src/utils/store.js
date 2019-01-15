@@ -10,7 +10,6 @@ const store = new Vuex.Store({
     mutations:{
         setOpenid:function(state,openid){
             state.openid = openid;
-            console.log("设置openid",openid)
         }
     }
 });

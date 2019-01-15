@@ -20,50 +20,8 @@ export function formatTime (date) {
   return `${t1} ${t2}`
 }
 
-/**
- * 获取openid
- */
-function getOpenid(url){
-  let _this = this;
-  
-  let promise = new Promise((success,fail)=>{
-      success();
-  });
- 
-  // * 获取微信返回的code
-  promise.then((res)=>{
-      return new Promise((success,fail)=>{
-          wx.login({
-              success:(res)=>{
-                  let code = res.code;
-                  success({code});
-              }
-          });
-      })
-  // * 通过code从后台获取openid，并存入本地缓存
-  }).then((res)=>{
-      return new Promise((success,fail)=>{
-          wx.request({
-              url,
-              data:{
-                  js_code:res.code
-              },
-              success:(res)=>{
-                  let openid = res.data.data.openid;
-                  // wx.setStorageSync("openid",openid);
-                  Vue.prototype.globalData.openid = openid;
-              }
-          });
-      });
-  }).catch((err)=>{
-      console.log(err);
-  }); //---promiseEnd
-  console.log("getOpenid 执行");
-}
-
 
 export default {
   formatNumber,
-  formatTime,
-  getOpenid
+  formatTime
 }
