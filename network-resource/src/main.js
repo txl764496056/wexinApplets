@@ -18,7 +18,8 @@ Vue.prototype.globalData.loginUrl = "miniprogram/index/sms_login";
 Vue.prototype.globalData.verifyUrl = "miniprogram/index/send_sms";
 // 获取openidAPI
 Vue.prototype.globalData.openidUrl = "miniprogram/login/get_openid";
-// 用户基本信息API
+// 附近人API
+Vue.prototype.globalData.nearbyUrl = "miniprogram/index/nearby_people";
 Vue.prototype.globalData.userInfo = {};
 Vue.prototype.globalData.openid = "";
 

@@ -3,7 +3,6 @@ import store from "@/utils/store"
 export default {
   data:function(){
     return {
-    //   openid:"", //用户openid
       httpUrl:this.globalData.httpUrl,
       userUrl:this.globalData.userInfoUrl,//获取用户信息
       openidUrl:this.globalData.openidUrl//获取openid
@@ -28,7 +27,7 @@ export default {
                 }
             });
         })
-    // * 通过code从后台获取openid，并存入本地缓存
+    // * 通过code从后台获取openid，并存入store
     }).then((res)=>{
         return new Promise((success,fail)=>{
             wx.request({
@@ -39,7 +38,6 @@ export default {
                 success:(res)=>{
                     let openid = res.data.data.openid;
                     _this.$store.commit("setOpenid",openid);
-                    // _this.openid = _this.$store.state.openid;
                 }
             });
         });
@@ -55,14 +53,14 @@ export default {
   },
   watch:{
       openid(newVal,oldVal){
-          console.log("ddd",newVal);
          let _this = this;
          let openid = newVal; 
-         let url = _this.httpUrl+_this.openidUrl; 
+         let url = _this.httpUrl+_this.userUrl; 
          let promise = new Promise((success,fail)=>{
              success();
          });
-        //  获取用户信息
+         console.log(newVal,"login openid");
+        //  获取用户信息,存入store
          promise.then((res)=>{
              return new Promise((success,fail)=>{
                  wx.request({
@@ -71,9 +69,20 @@ export default {
                          openid
                      },
                      success:function(res){
-                         console.log(res,"用户信息")
+                        let userInfo = res.data.data;
+                        _this.$store.commit("setUserInfo",userInfo);
+                        success({is_in:userInfo.is_in})
                      }
                  })
+             });
+        //  判断用户是否已登录绑定过
+         }).then((res)=>{
+             return new Promise((success,fail)=>{
+                if(res.is_in!=1){
+                    // wx.reLaunch({
+                    //     url:"/pages/login/main"
+                    // });
+                }
              });
          }).catch((err)=>{
              console.log(err);

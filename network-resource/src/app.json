@@ -35,5 +35,10 @@
         "selectedIconPath":"/static/icon/me-selected.png"
       }
     ]
+  },
+  "permission":{
+    "scope.userLocation":{
+      "desc":"您的位置信息将用于附近人列表展示"
+    }
   }
 }
