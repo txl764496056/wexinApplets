@@ -36,7 +36,7 @@ export default {
     created:function(){
         let _this = this;
         
-    },
+    }, 
     mounted:function(){
         let _this = this;
         // console.log(_this.globalData.openid,"login");

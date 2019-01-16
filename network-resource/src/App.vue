@@ -51,7 +51,7 @@ export default {
         return this.$store.state.openid
      }
   },
-  watch:{
+  watch:{ 
       openid(newVal,oldVal){
          let _this = this;
          let openid = newVal; 

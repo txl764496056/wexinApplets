@@ -127,7 +127,7 @@ export default {
               width:"26",
               height:"26"
             }
-          });
+          }); 
           _this.markers.push(...arr);
         }
       });
