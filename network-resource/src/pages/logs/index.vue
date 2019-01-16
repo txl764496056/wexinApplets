@@ -8,7 +8,7 @@
   </div>
 </template>
 
-<script>
+<script> 
 import { formatTime } from '@/utils/index'
 import card from '@/components/card'
  

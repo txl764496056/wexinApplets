@@ -58,7 +58,7 @@ export default {
          let url = _this.httpUrl+_this.userUrl; 
          let promise = new Promise((success,fail)=>{
              success();
-         });
+         }); 
          console.log(newVal,"login openid");
         //  获取用户信息,存入store
          promise.then((res)=>{
