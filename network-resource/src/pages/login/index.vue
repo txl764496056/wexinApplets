@@ -41,7 +41,7 @@ export default {
         let _this = this;
         // console.log(_this.globalData.openid,"login");
     },
-    methods:{
+    methods:{ 
         /**
          * 验证码和手机不为空时，登录按钮disable设置为true
          */
